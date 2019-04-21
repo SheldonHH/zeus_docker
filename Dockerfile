@@ -1,4 +1,4 @@
-FROM ubuntu:18.04
+FROM boscore/builder as builder
 
 RUN apt-get update && apt-get install -y wget sudo curl
 RUN apt-get install -y git-core libtool build-essential
