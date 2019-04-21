@@ -1,6 +1,7 @@
 FROM boscore/builder as builder
 
 RUN apt-get update && apt-get install -y wget sudo curl
+RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get -y install openssl ca-certificates curl wget git cmake python3 g++ vim net-tools lsof wget curl supervisor
 RUN apt-get install -y git-core libtool build-essential
 RUN wget https://github.com/EOSIO/eosio.cdt/releases/download/v1.6.1/eosio.cdt_1.6.1-1_amd64.deb
 RUN apt-get update && sudo apt install -y ./eosio.cdt_1.6.1-1_amd64.deb
